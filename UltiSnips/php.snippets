@@ -3,3 +3,9 @@ header("Content-type: text/plain");
 var_dump(${1:$variable});
 exit;$2
 endsnippet
+
+snippet if "if"
+if (${1:/* condition */}) {
+	${2:${VISUAL:\/\/ code...}}
+}
+endsnippet
