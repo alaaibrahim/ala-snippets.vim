@@ -6,20 +6,23 @@ endsnippet
 
 snippet if
 if (${1:true}) {
-	${0:${VISUAL:\/\/ Code Here}}
+	${2:${VISUAL:\/\/ Code Here}}
 }
+$0
 endsnippet
 
 snippet try
 try {
 	${1:${VISUAL}}
 } catch (${2:e}) {
-	${0:/* handle error */}
+	${3:/* handle error */}
 }
+$0
 endsnippet
 
 snippet wh
 while (${1:/* condition */}) {
-	${0:${VISUAL}}
+	${2:${VISUAL:\/\/ Code Here}}
 }
+$0
 endsnippet
