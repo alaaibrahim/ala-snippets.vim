@@ -26,3 +26,89 @@ while (${1:/* condition */}) {
 }
 $0
 endsnippet
+
+snippet econst
+export const ${1} = '${2:$1}';$0
+endsnippet
+
+snippet econsta
+export const ${1} = '${2:$1}';
+export const ${3:$1_START} = '${4:$3}';
+export const ${5:$1_SUCCESS} = '${6:$5}';
+export const ${7:$1_FAIL} = '${8:$7}';$0
+endsnippet
+
+snippet actions
+export const ${1} = params => ({
+	type: ${2},
+	params,
+});
+
+export const ${3:$1Start} = () => ({
+	type: ${4:$2_START},
+});
+
+export const ${5:$1Success} = response => ({
+	type: ${6:$2_SUCCESS},
+	response,
+});
+
+export const ${7:$1Fail} = error => ({
+	type: ${8:$2_FAIL},
+	error,
+});
+$0
+endsnippet
+
+snippet newp
+new Promise((resolve, reject) => {
+	${1:${VISUAL}}
+})
+$0
+endsnippet
+
+snippet reactf
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+
+class ${1:MyComponent} extends Component {
+	static propTypes = {
+		${2}: PropTypes.${3}
+	}
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			${4}: ${5},
+		};
+	}
+
+	render() {
+		return (
+			${0:<div></div>}
+		);
+	}
+}
+
+export default ${6:$1};
+
+endsnippet
+
+snippet requestor
+const ${1:${VISUAL}} = (${2:payload, }userId) => new Promise((resolve, reject) => {
+	request
+		.${3:get}('/REST/v1/${4}')
+		.query({ userId })
+		.set('Content-Type', CONTENT_TYPE_HEADER)
+		.set('Accept', ACCEPT_HEADER)
+		// .send(${6:payload})
+		.end((err, response) => {
+			if (err) {
+				return reject(err);
+			}
+
+			return resolve(response.body);
+		});
+});${0}
+endsnippet
