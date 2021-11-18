@@ -1,0 +1,6 @@
+priority -50
+extends typescript_react
+
+snippet useSt "useStateT Hook" b
+const [${1}, set`!p snip.rv=t[1][0].upper() + t[1][1:] if t[1] else t[1]`] = useState<${3}>(${2});$0
+endsnippet
